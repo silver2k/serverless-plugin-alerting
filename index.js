@@ -502,6 +502,7 @@ module.exports = function(S) {
                 Statistic: alertConfig.alarmStatisticType,
                 Threshold: alertConfig.alarmThreshold,
                 AlarmDescription: alertConfig.description,
+                TreatMissingData: alertConfig.treatMissingData != null ? alertConfig.treatMissingData : 'missing',
                 Dimensions: dimensions
             };
 
