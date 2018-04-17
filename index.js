@@ -199,7 +199,7 @@ module.exports = function(S) {
                     var logGroupName = '/aws/lambda/' + functionName;
 
                     for (var metricfilter in alertContent.metricFilters) {
-                        //alertContent.metricFilters[metricfilter].filterName = logGroupName + '_' + metricfilter;
+                        alertContent.metricFilters[metricfilter].filterName = logGroupName + '_' + alertContent.metricFilters[metricfilter].name;
                         alertContent.metricFilters[metricfilter].logGroupName = logGroupName;
                         alertContent.metricFilters[metricfilter].metricTransformations.forEach(function (transformation, index) {
                             if(!transformation.metricNamespace) {
