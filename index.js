@@ -200,6 +200,7 @@ module.exports = function(S) {
 
                     for (var metricfilter in alertContent.metricFilters) {
                         alertContent.metricFilters[metricfilter].filterName = logGroupName + '_' + alertContent.metricFilters[metricfilter].name;
+                        delete alertContent.metricFilters[metricfilter].name
                         alertContent.metricFilters[metricfilter].logGroupName = logGroupName;
                         alertContent.metricFilters[metricfilter].metricTransformations.forEach(function (transformation, index) {
                             if(!transformation.metricNamespace) {
