@@ -199,7 +199,7 @@ module.exports = function(S) {
                     var logGroupName = '/aws/lambda/' + functionName;
 
                     for (var metricfilter in alertContent.metricFilters) {
-                        alertContent.metricFilters[metricfilter].filterName = logGroupName + '_' + metricfilter;
+                        //alertContent.metricFilters[metricfilter].filterName = logGroupName + '_' + metricfilter;
                         alertContent.metricFilters[metricfilter].logGroupName = logGroupName;
                         alertContent.metricFilters[metricfilter].metricTransformations.forEach(function (transformation, index) {
                             if(!transformation.metricNamespace) {
@@ -238,7 +238,7 @@ module.exports = function(S) {
                     var logGroupName = '/aws/lambda/' + functionName;
 
                     for (var subscriptionFilter in alertContent.subscriptionFilters) {
-                        alertContent.subscriptionFilters[subscriptionFilter].filterName = subscriptionFilter;
+                        //alertContent.subscriptionFilters[subscriptionFilter].filterName = subscriptionFilter;
                         alertContent.subscriptionFilters[subscriptionFilter].logGroupName = logGroupName;
                         subscriptionFilterActions.push(
                             _this.aws.request('CloudWatchLogs', 'putSubscriptionFilter', alertContent.subscriptionFilters[subscriptionFilter], _this.stage, _this.region)
